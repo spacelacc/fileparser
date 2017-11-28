@@ -72,6 +72,7 @@ int parser_parse(const char *filepath,
 			for (i = 0; i < lc; i++) {
 			    if (commbuffer[i] == '\n') {
 				linecount++;
+				linebuffer[lb] = '\0';
 				process_linebuffer(linebuffer, linecount);
 				memset(linebuffer, '\0', lb);
 				lb = 0;
@@ -83,6 +84,7 @@ int parser_parse(const char *filepath,
 				linebuffer[lb++] = commbuffer[i];
 			    } else {
 				linecount++;
+				linebuffer[lb] = '\0';
 				process_linebuffer(linebuffer, linecount);
 				memset(linebuffer, '\0', lb);
 				lb = 0;
@@ -134,6 +136,7 @@ int parser_parse(const char *filepath,
 			for (i = 0; i < lc; i++) {
 			    if (commbuffer[i] == '\n') {
 				linecount++;
+				linebuffer[lb] = '\0';
 				process_linebuffer(linebuffer, linecount);
 				memset(linebuffer, '\0', lb);
 				lb = 0;
@@ -155,6 +158,7 @@ int parser_parse(const char *filepath,
 		     */
 		    if (c == '\n') {
 			linecount++;
+			linebuffer[lb] = '\0';
 			process_linebuffer(linebuffer, linecount);
 			memset(linebuffer, '\0', lb);
 			lb = 0;
